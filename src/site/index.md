@@ -1,90 +1,25 @@
 ---
-title: EleventyOne
-subtitle: A project scaffold for getting building with Eleventy quickly.<br /> Made by <a href="https://twitter.com/philhawksworth">Phil</a> for <a href="https://twitter.com/philhawksworth">Phil</a>, but perhaps you might also find it useful.
+title: Open Data Japan
+subtitle: Curated, useable open data from Japan
 layout: layouts/base.njk
 ---
 
 
-## This site is a starting point
+## This site is just starting up
 
-From this point we should already have:
+The Japanese government (and other sites) offers a wealth of open data about Japan, its economy and people. However, this data is often difficult to use: Descriptions and column names are available only in Japanese, data comes in human-readable Excel reports (or worse: PDFs) and is not ready to be machine-read. The data is often already summarised and it is difficult to find more granular data among the millions of files listed.
 
-- [Eleventy](https://11ty.io) with a skeleton site
-- A date format filter for Nunjucks based on [Luxon](https://moment.github.io/luxon)
-- A tiny CSS pipeline with PostCSS
-- A tiny inline JS pipeline. (<a href="#" class="btn-log">Test a console.log message</a>)
-- JS [search index](/search.json) generator
-- [Netlify Dev](https://www.netlify.com/products/dev) for testing [Netlify redirects](https://netlify.com/docs/redirects/)
-- Serverless (FaaS) development pipeline with [Netlify Dev](https://www.netlify.com/products/dev) and [Netlify Functions](https://www.netlify.com/products/functions)
+We want to make this data more accessible and provide curated data sets:
 
+- Truly machine-readable
+- Ready to be analysed
+- Descriptions and column names in English
+- Multiple files that belong together are combined
 
+## Data sets
 
-## Post pages
+|  Title  |  Description  | Published on | Repository | Sample Analysis |   
+| --- | --- |  --- |  --- |   --- |    
+| Public holidays in Japan 1955-2022 | A list of public holidays by year with Japanese and English names | 2021/03/28 | [Data repository on GitHub](https://github.com/Open-Data-Japan/odj-data-public_holidays) | [Jupyter notebook on GitHub](https://github.com/Open-Data-Japan/odj-data-public_holidays/blob/main/sample-analysis/jupyter-odj-data-public_holidays.ipynb) |
 
-The pages found in in the posts
-
-<ul class="listing">
-{%- for page in collections.post -%}
-  <li>
-    <a href="{{ page.url }}">{{ page.data.title }}</a> -
-    <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLLL d, y") }}</time>
-  </li>
-{%- endfor -%}
-</ul>
-
-## Links from an external data source
-
-These links were sourced from [hawksworx.com](https://www.hawksworx.com/feed.json) at build time.
-
-<ul class="listing">
-{%- for item in hawksworx.entries.slice(0,5) -%}
-  <li>
-    <a href="{{ item.link }}">{{ item.title }}</a>
-  </li>
-{%- endfor -%}
-</ul>
-
-
-## Prerequisite
-
-- [Node and NPM](https://nodejs.org/)
-
-## Running locally
-
-```bash
-# install the dependencies
-npm install
-
-# External data sources can be stashed locally
-npm run seed
-
-# It will then be available locally for building with
-npm run start
-```
-
-## Add some Netlify helpers
-Netlify Dev adds the ability to use Netlify redirects, proxies, and serverless functions.
-
-```bash
-# install the Netlify CLI in order to get Netlify Dev
-npm install -g netlify-cli
-
-# run a local server with some added Netlify sugar in front of Eleventy
-netlify dev
-```
-
-A serverless functions pipeline is included via Netlify Dev. By running `netlify dev` you'll be able to execute any of your serverless functions directly like this:
-
-- [/.netlify/functions/hello](/.netlify/functions/hello)
-- [/.netlify/functions/fetch-joke](/.netlify/functions/fetch-joke)
-
-### Redirects and proxies
-
-Netlify's Redirects API can provide friendlier URLs as proxies to these URLs.
-
-- [/api/hello](/api/hello)
-- [/api/fetch-joke](/api/fetch-joke)
-
-
-
-
+*There aren't a lot of datasets to download here yet. We are currently working hard to bring you open data from Japan. In the meantime, please feel free to reach out to __david@opendatajapan.com__ on this domain.*
